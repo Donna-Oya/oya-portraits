@@ -1,0 +1,12 @@
+# 1. Preserve the old Netlify Function URL — rewrite (status 200) keeps the
+#    browser URL unchanged and forwards the ?endpoint=... query string.
+#    This means your existing frontend JS does NOT need to be edited.
+/.netlify/functions/iucn-proxy   /api/iucn-proxy   200
+
+# 2. Belt-and-braces: any other accidental Netlify function calls 301 to /api/
+/.netlify/functions/*            /api/:splat       301
+
+# 3. Hide the legacy Netlify config files from public eyes
+#    (kept in the repo for rollback, but no need to serve them).
+/netlify/*       /                  404
+/netlify.toml    /                  404
