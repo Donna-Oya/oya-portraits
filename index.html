@@ -3,30 +3,41 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#283878" />
-<meta name="description" content="OYA Portraits — portraits of threatened plants, told in four chapters. Conservation for the Next Generation." />
-<title>OYA Portraits — Conservation for the Next Generation</title>
+<meta name="theme-color" content="#1e358f" />
+<meta name="description" content="Oya Portraits — portraits of threatened plants, told in four chapters. Conservation for the Next Generation." />
+<title>Oya Portraits — Conservation for the Next Generation</title>
 <link rel="manifest" href="manifest.json" />
 <link rel="icon" type="image/png" href="Oya%20blue%20transparent.png" />
 <link rel="apple-touch-icon" href="Oya%20blue%20transparent.png" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="anonymous" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&family=Noto+Sans:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" />
 
 <style>
   :root {
-    --marine: #283878;
-    --marine-dark: #1d295a;
+    /* Brand palette — synced with Oya Learning Hub (May 2026 rebrand) */
+    --marine: #1e358f;
+    --marine-dark: #152870;
     --white: #ffffff;
     --offwhite: #f8f7f4;
+
+    /* Four-chapter accent palette — Portraits editorial layer */
     --sage: #c8e896;
     --soft-red: #e87870;
     --soft-purple: #b8a0e8;
     --warm-peach: #e8b890;
+
+    /* IUCN status colours — original Oya Portraits palette */
     --status-cr: #e24b4a;
     --status-en: #ef9f27;
     --status-vu: #1d9e75;
-    --ink: #1c1d21;
-    --ink-soft: #5a5d68;
-    --hairline: #e6e4dd;
+    --status-lc: #4a9b6f;
+
+    /* Neutral tones */
+    --ink: #2c2c2c;
+    --ink-soft: #6b7280;
+    --hairline: #e5e7eb;
     --chapter-color: var(--sage);
   }
 
@@ -38,7 +49,7 @@
     padding: 0;
     background: var(--offwhite);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
@@ -59,7 +70,7 @@
 
   /* ===== HEADER ===== */
   .site-header {
-    background: #2a2420;
+    background: #1e358f;
     color: #ffffff;
     padding: 12px 24px;
     position: sticky;
@@ -109,7 +120,7 @@
     gap: 3px;
   }
   .header-app-title {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
     font-style: normal;
     font-weight: bold;
     font-size: 32px;
@@ -118,7 +129,7 @@
     line-height: 1;
   }
   .header-tagline {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -143,7 +154,7 @@
   .mission-ribbon-inner {
     max-width: 1240px;
     margin: 0 auto;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
     font-style: normal;
     font-size: 19px;
     color: #1a1a1a;
@@ -152,7 +163,7 @@
 
   /* ===== COLOUR CODE MENU ===== */
   .colour-menu {
-    background: #2a2420;
+    background: #1e358f;
     padding: 10px 24px 13px;
     border-bottom: none;
     position: sticky;
@@ -168,7 +179,7 @@
     gap: 20px;
   }
   .colour-menu-label {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
     font-style: normal;
     font-size: 15px;
     color: #ffffff;
@@ -211,7 +222,7 @@
     display: inline-block;
   }
   .colour-chip-label {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
     font-size: 15px;
     color: #ffffff;
     letter-spacing: 0.15px;
@@ -234,7 +245,7 @@
     gap: 16px;
   }
   .filter-banner-label {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: normal;
     font-size: 15px;
     color: #1a1a1a;
@@ -267,7 +278,7 @@
     align-items: center;
   }
   .featured-art {
-    background: #2a2420;
+    background: #1e358f;
     aspect-ratio: 3 / 4;
     position: relative;
     border-radius: 4px;
@@ -303,7 +314,7 @@
     color: rgba(255,255,255,0.7);
     font-size: 11px;
     letter-spacing: 0.4px;
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: normal;
     padding: 0 16px;
   }
@@ -317,7 +328,7 @@
     margin-bottom: 18px;
   }
   .featured-sci {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Lora', Georgia, "Times New Roman", serif;
     font-style: italic;
     font-weight: normal;
     font-size: 48px;
@@ -332,7 +343,7 @@
     letter-spacing: 0.2px;
   }
   .featured-pullquote {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-size: 20px;
     color: var(--ink);
@@ -388,7 +399,7 @@
     margin: 0 auto;
   }
   .more-stories-heading {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
     font-style: normal;
     font-weight: normal;
     font-size: 34px;
@@ -397,41 +408,41 @@
     line-height: 1.15;
   }
   .teaser-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+    gap: 40px;
   }
   .teaser {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 28px;
-    padding: 28px 0;
-    border-top: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
     cursor: pointer;
-    transition: background 0.2s ease;
-    align-items: flex-start;
-    background: transparent;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: var(--white);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    overflow: hidden;
     width: 100%;
     text-align: left;
   }
-  .teaser:last-child { border-bottom: 1px solid var(--hairline); }
-  .teaser:hover { background: rgba(255,255,255,0.6); }
-  .teaser:hover .teaser-sci { color: #6f9c3a; }
+  .teaser:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(28, 29, 33, 0.08); }
+  .teaser:hover .teaser-title { color: var(--marine-dark); }
+  .teaser:hover .teaser-enter {
+    background: var(--marine);
+    color: var(--white);
+  }
   .teaser:focus-visible {
     outline: 2px solid var(--marine);
     outline-offset: 4px;
   }
   .teaser-thumb {
-    width: 140px;
-    height: 140px;
-    border-radius: 4px;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    border-radius: 0;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     overflow: hidden;
   }
   .teaser-thumb svg.leaf {
@@ -440,65 +451,88 @@
     opacity: 0.75;
   }
   .teaser-status {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 3px 8px;
+    display: inline-block;
+    padding: 5px 12px;
     border-radius: 3px;
+    background: var(--marine);
     color: var(--white);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    z-index: 2;
-  }
-  .teaser-body { padding-top: 4px; }
-  .teaser-sci {
-    font-family: Georgia, serif;
-    font-style: italic;
-    font-size: 22px;
-    color: #1a1a1a;
-    margin: 0 0 4px;
-    line-height: 1.2;
-    font-weight: normal;
-    transition: color 0.2s ease;
-  }
-  .teaser-region {
-    font-size: 13px;
-    color: var(--ink-soft);
-    margin: 0 0 10px;
-    letter-spacing: 0.2px;
-  }
-  .teaser-snippet {
-    font-size: 13.5px;
-    color: var(--ink);
-    line-height: 1.6;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     margin: 0 0 12px;
   }
-  .teaser-row {
+  .teaser-status.status-CR { background: var(--status-cr); }
+  .teaser-status.status-EN { background: var(--status-en); }
+  .teaser-status.status-VU { background: var(--status-vu); }
+  .teaser-status.status-LC { background: var(--status-lc); }
+  .teaser-body { padding: 24px 28px 28px; }
+  .teaser-footer {
     display: flex;
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .teaser-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--marine);
+    margin: 0 0 4px;
+    line-height: 1.15;
+    transition: color 0.2s ease;
+  }
+  .teaser-sci {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin: 0 0 8px;
+    line-height: 1.25;
+    font-weight: normal;
+  }
+  .teaser-family {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+    letter-spacing: 0.1px;
+  }
+  .teaser-snippet {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.55;
+    margin: 0 0 10px;
   }
   .teaser-enter {
-    font-size: 13px;
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1.5px solid var(--marine);
+    border-radius: 4px;
     color: var(--marine);
+    background: var(--white);
+    font-size: 13px;
+    font-weight: 600;
     letter-spacing: 0.3px;
-    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
   }
   .teaser-oya-tag {
     display: inline-block;
     padding: 3px 10px;
-    background: #2a2420;
+    background: var(--marine);
     color: var(--sage);
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-size: 11px;
     border-radius: 3px;
+    margin-top: 4px;
   }
   .filter-empty {
     color: var(--ink-soft);
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     text-align: center;
     padding: 48px 16px;
@@ -507,7 +541,7 @@
 
   /* ===== HOME FOOTER ===== */
   .home-footer {
-    background: #2a2420;
+    background: #1e358f;
     color: #ffffff;
     padding: 40px 24px 48px;
     border-top: none;
@@ -578,7 +612,7 @@
     justify-content: space-between;
     gap: 16px;
     position: sticky;
-    top: 80px;
+    top: 92px;
     z-index: 50;
   }
   .back-btn {
@@ -616,7 +650,7 @@
   }
 
   .chapter-label {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: normal;
     color: var(--ink-soft);
     font-size: 16px;
@@ -660,7 +694,7 @@
   }
 
   .sci-name {
-    font-family: Georgia, serif;
+    font-family: 'Lora', Georgia, serif;
     font-style: italic;
     font-size: 42px;
     color: #1a1a1a;
@@ -672,7 +706,7 @@
   .region-line { font-size: 14px; color: var(--ink-soft); letter-spacing: 0.4px; margin-bottom: 32px; }
 
   .pull-quote {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: normal;
     font-size: 26px;
     color: #1a1a1a;
@@ -700,7 +734,7 @@
     margin-bottom: 6px;
   }
   .fact-value {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: normal;
     font-size: 22px;
     color: #1a1a1a;
@@ -711,7 +745,7 @@
 
   /* Chapter 2 — Threat */
   .section-header {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: normal;
     font-weight: bold;
     color: #1a1a1a;
@@ -761,7 +795,7 @@
   }
   .art-placeholder svg { width: 200px; opacity: 0.6; margin-bottom: 24px; }
   .artist-credit {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-size: 22px;
     color: #1a1a1a;
@@ -772,11 +806,13 @@
     font-size: 11px;
     color: var(--ink-soft);
     letter-spacing: 0.4px;
-    margin: 0 0 16px;
+    margin: 32px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline);
     opacity: 0.7;
   }
   .artist-quote {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-size: 19px;
     color: var(--ink);
@@ -802,7 +838,7 @@
     margin: 32px 0;
   }
   .needs-artist h3 {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: normal;
     color: #1a1a1a;
@@ -811,7 +847,7 @@
   }
   .art-closing {
     text-align: center;
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     color: #1a1a1a;
     font-size: 18px;
@@ -844,7 +880,7 @@
     transform: translateY(-3px);
   }
   .action-card h3 {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: normal;
     color: #1a1a1a;
@@ -941,14 +977,12 @@
 
     .more-stories { padding: 44px 20px 56px; }
     .more-stories-heading { font-size: 26px; margin-bottom: 18px; }
-    .teaser {
-      grid-template-columns: 96px 1fr;
-      gap: 16px;
-      padding: 20px 0;
-    }
-    .teaser-thumb { width: 96px; height: 96px; }
-    .teaser-sci { font-size: 18px; }
-    .teaser-snippet { font-size: 13px; }
+    .teaser-list { grid-template-columns: 1fr; gap: 24px; }
+    .teaser-body { padding: 20px 20px 22px; }
+    .teaser-title { font-size: 22px; }
+    .teaser-sci { font-size: 16px; }
+    .teaser-snippet { font-size: 14px; }
+    .teaser-enter { padding: 12px 20px; }
 
     .sci-name { font-size: 30px; }
     .section-header { font-size: 30px; }
@@ -996,14 +1030,14 @@
   }
   .modal-close:hover { color: var(--ink); }
   .modal-box h2 {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: normal;
     font-size: 26px;
     margin: 0 0 20px;
     color: #1a1a1a;
   }
   .modal-box h3 {
-    font-family: Georgia, serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: normal;
     font-size: 18px;
     margin: 24px 0 8px;
@@ -1037,8 +1071,8 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="brand" id="brand">
-      <a class="brand-logo" id="brandLogo" href="#" aria-label="Association OYA &mdash; OYA Portraits home">
-        <img src="white-oya.png" alt="OYA" class="oya-header-logo">
+      <a class="brand-logo" id="brandLogo" href="#" aria-label="Association Oya &mdash; Oya Portraits home">
+        <img src="white-oya.png" alt="Oya" class="oya-header-logo">
       </a>
       <div class="header-title-block">
         <span class="header-app-title">Portraits</span>
@@ -1093,10 +1127,10 @@
     <footer class="home-footer">
       <div class="home-footer-inner">
         <div class="home-footer-mark">
-          <img src="white-oya.png" alt="OYA" class="home-footer-logo">
+          <img src="white-oya.png" alt="Oya" class="home-footer-logo">
         </div>
         <div class="home-footer-social">
-          <a href="https://www.instagram.com/oyatees/" target="_blank" rel="noopener" aria-label="OYA on Instagram" class="social-icon">
+          <a href="https://www.instagram.com/oyatees/" target="_blank" rel="noopener" aria-label="Oya on Instagram" class="social-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <circle cx="12" cy="12" r="5"/>
@@ -1105,8 +1139,7 @@
           </a>
           <!-- Additional social channels to be added here -->
         </div>
-        <p class="home-footer-line">OYA Portraits is a free educational resource &middot; GSPC Target 14</p>
-        <p class="home-footer-copy">&copy; 2026 OYA: Conservation for the Next Generation &middot; All Rights Reserved &middot; Geneva, Switzerland</p>
+        <p class="home-footer-line">Oya Portraits is a free educational resource &middot; GSPC Action 21(e) under KMGBF Target 21</p>
         <p class="home-footer-copy" style="margin-top:4px;"><a href="https://oyatees.org" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.7);">oyatees.org</a> &nbsp;&middot;&nbsp; <button class="footer-modal-link" onclick="openModal('privacyModal')">Privacy Policy</button> &nbsp;&middot;&nbsp; <button class="footer-modal-link" onclick="openModal('tosModal')">Terms of Service</button></p>
       </div>
     </footer>
@@ -1199,10 +1232,10 @@
 
         <div id="artSection"></div>
 
-        <p class="art-closing">OYA commissions artists worldwide to make invisible plants visible.<br/>Conservation through culture.</p>
+        <p class="art-closing">We invite artists from all disciplines to contribute and become Oya artists.<br/>Conservation through culture.</p>
 
         <div id="pdfDownloadBtn" style="display:none;margin:32px 0 8px;">
-          <button onclick="" style="background:#2a2420;color:#fff;border:none;padding:12px 24px;border-radius:3px;font-size:14px;cursor:pointer;letter-spacing:0.4px;">&#8681; Download this Portrait as PDF</button>
+          <button onclick="" style="background:#1e358f;color:#fff;border:none;padding:12px 24px;border-radius:3px;font-size:14px;cursor:pointer;letter-spacing:0.4px;">&#8681; Download this Portrait as PDF</button>
         </div>
 
         <div class="chapter-nav">
@@ -1222,13 +1255,13 @@
 
         <div class="action-grid">
           <a class="action-card" href="https://oyatees.org/oya-tees-2" target="_blank" rel="noopener">
-            <h3>Shop the OYA collection</h3>
-            <p>Botanical illustrations printed on organic cotton. Every purchase funds the next commission.</p>
+            <h3>Shop the Oya collection</h3>
+            <p>Plant-inspired illustrations printed on organic cotton. Every purchase funds the next commission.</p>
             <span class="arrow">Visit the store &rarr;</span>
           </a>
           <a class="action-card" href="https://oyatees.org/membership" target="_blank" rel="noopener">
             <h3>Join the Circle of Friends</h3>
-            <p>Become a member and help OYA bring more threatened plants into the public eye.</p>
+            <p>Become a member and help Oya bring more threatened plants into the public eye.</p>
             <span class="arrow">Become a member &rarr;</span>
           </a>
           <a class="action-card" href="https://oyatees.org/contact" target="_blank" rel="noopener">
@@ -1239,9 +1272,9 @@
         </div>
 
         <p class="footer-note">
-          OYA Portraits is a free educational resource aligned with <strong>GSPC Target 14</strong>: communicating plant diversity, its conservation, and its role in sustainable livelihoods. Data sourced from the <a href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List of Threatened Species</a> &mdash; iucnredlist.org. Photos sourced from <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a> under Creative Commons licence.
+          Oya Portraits is a free educational resource aligned with <strong>GSPC Action 21(e) under KMGBF Target 21</strong>: communicating plant diversity, its conservation, and its role in sustainable livelihoods. Data sourced from the <a href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List of Threatened Species</a> &mdash; iucnredlist.org. Photos sourced from <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a> under Creative Commons licence.
         </p>
-        <p class="copyright">&copy; 2026 OYA: Conservation for the Next Generation &mdash; All Rights Reserved &mdash; Geneva, Switzerland &mdash; <a href="https://oyatees.org" target="_blank" rel="noopener">oyatees.org</a></p>
+        <p class="copyright">&copy; 2026 Oya: Conservation for the Next Generation &mdash; All Rights Reserved &mdash; Geneva, Switzerland &mdash; <a href="https://oyatees.org" target="_blank" rel="noopener">oyatees.org</a></p>
 
         <div class="chapter-nav">
           <button data-next="2">&larr; Back</button>
@@ -1259,9 +1292,9 @@
     <button class="modal-close" onclick="closeModal('privacyModal')" aria-label="Close">&times;</button>
     <h2 id="privacyTitle">Privacy Policy</h2>
     <p><em>Last updated: May 2026</em></p>
-    <p>OYA Portraits is a free, non-commercial educational resource created by Association OYA: Conservation for the Next Generation, Geneva, Switzerland.</p>
+    <p>Oya Portraits is a free, non-commercial educational resource created by Association Oya: Conservation for the Next Generation, Geneva, Switzerland.</p>
     <h3>What data we collect</h3>
-    <p>OYA Portraits does not collect, store, or share any personal data about its visitors. We do not use cookies, tracking pixels, or analytics tools.</p>
+    <p>Oya Portraits does not collect, store, or share any personal data about its visitors. We do not use cookies, tracking pixels, or analytics tools.</p>
     <h3>Third-party services</h3>
     <p>The app makes read-only requests to the following services to display species information and photographs:</p>
     <ul>
@@ -1270,7 +1303,7 @@
       <li><strong>GBIF</strong> (gbif.org) — georeferenced species occurrence data for maps.</li>
       <li><strong>OpenStreetMap</strong> — map tiles via Leaflet.js.</li>
     </ul>
-    <p>These services have their own privacy policies. OYA Portraits does not transmit any user data to these services.</p>
+    <p>These services have their own privacy policies. Oya Portraits does not transmit any user data to these services.</p>
     <h3>Contact</h3>
     <p>For questions, contact us at <a href="https://oyatees.org/contact" target="_blank" rel="noopener">oyatees.org/contact</a>.</p>
   </div>
@@ -1282,15 +1315,15 @@
     <button class="modal-close" onclick="closeModal('tosModal')" aria-label="Close">&times;</button>
     <h2 id="tosTitle">Terms of Service</h2>
     <p><em>Last updated: May 2026</em></p>
-    <p>By using OYA Portraits, you agree to the following terms.</p>
+    <p>By using Oya Portraits, you agree to the following terms.</p>
     <h3>Use of content</h3>
-    <p>All written narratives, design, and OYA illustrations displayed in this app are &copy; 2026 OYA: Conservation for the Next Generation. All Rights Reserved. They may not be reproduced, distributed, or used commercially without prior written permission from OYA.</p>
+    <p>All written narratives, design, and Oya illustrations displayed in this app are &copy; 2026 Oya: Conservation for the Next Generation. All Rights Reserved. They may not be reproduced, distributed, or used commercially without prior written permission from Oya.</p>
     <h3>Third-party data</h3>
     <p>Species data is sourced from the IUCN Red List of Threatened Species&trade; and is used under the IUCN Terms of Use for non-commercial educational purposes. Photographs are sourced from iNaturalist under Creative Commons licences. Maps use data from GBIF and OpenStreetMap contributors.</p>
     <h3>Disclaimer</h3>
-    <p>OYA Portraits is provided &ldquo;as is&rdquo; for educational purposes only. While we strive for accuracy, OYA makes no warranties about the completeness or currency of the information displayed. For authoritative conservation data, consult the IUCN Red List directly at iucnredlist.org.</p>
+    <p>Oya Portraits is provided &ldquo;as is&rdquo; for educational purposes only. While we strive for accuracy, Oya makes no warranties about the completeness or currency of the information displayed. For authoritative conservation data, consult the IUCN Red List directly at iucnredlist.org.</p>
     <h3>Contact</h3>
-    <p>Association OYA: Conservation for the Next Generation &middot; Geneva, Switzerland &middot; <a href="https://oyatees.org" target="_blank" rel="noopener">oyatees.org</a></p>
+    <p>Association Oya: Conservation for the Next Generation &middot; Geneva, Switzerland &middot; <a href="https://oyatees.org" target="_blank" rel="noopener">oyatees.org</a></p>
   </div>
 </div>
 
@@ -1298,7 +1331,7 @@
 
 <script>
 /* ============================================================
-   OYA PLANT WATCH
+   Oya Plant Watch
    Configuration
    ============================================================ */
 
@@ -1313,12 +1346,13 @@ async function fetchIUCNData(endpoint) {
 }
 
 /* ============================================================
-   Sample species (OYA-confirmed)
+   Sample species (Oya-confirmed)
    ============================================================ */
 const SPECIES = [
   // ── CRITICALLY ENDANGERED ──────────────────────────────────────
   {
     scientificName: "Polyscias racemosa",
+    family: "Araliaceae",
     commonName: "False ʻOhe",
     slug: "polyscias-racemosa",
     status: "CR",
@@ -1333,17 +1367,18 @@ const SPECIES = [
     discoveryNarrative: "Imagine a tree with no room to spare &mdash; clinging to the sheer cliff faces of Kauaʻi, one of the wettest places on Earth, with barely a hundred of its kind still standing. The False ʻOhe is a tree that shows just how far an island species can be pushed to the edge.",
     pullQuote: "Only 110 individuals remain &mdash; all on a single Hawaiian island, on cliffs no other plant can reach.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Hawaii, USA",
     oyaCollection: "Collection 01",
     photoUrl: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Starr_060329-6805_Munroidendron_racemosum.jpg",
     photoCredit: "Photo: Forest &amp; Kim Starr, Wikimedia Commons (CC BY 3.0)",
     illustrationUrl: "Polyscias%20bisattenuata%20jpeg.jpg",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/34055/83787166"
   },
   {
     scientificName: "Centaurea akamantis",
+    family: "Asteraceae",
     commonName: "Akamas Centaurea",
     slug: "centaurea-akamantis",
     status: "CR",
@@ -1358,17 +1393,18 @@ const SPECIES = [
     discoveryNarrative: "Hidden in three limestone gorges at the remote tip of Cyprus &mdash; a place of legend, said to be where Aphrodite bathed &mdash; the Akamas Centaurea is a Mediterranean wildflower that grows in one of the island&rsquo;s last truly wild corners. It was named for the Akamas peninsula and grows nowhere else on Earth.",
     pullQuote: "Known from just three gorges on a single Cypriot peninsula &mdash; nowhere else on Earth.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Cyprus",
     oyaCollection: "Collection 02",
     photoUrl: "https://upload.wikimedia.org/wikipedia/commons/9/93/Centaurea_akamantis_kz2.jpg",
     photoCredit: "Photo: Wikimedia Commons (CC BY-SA)",
     illustrationUrl: "Centaurea%20akamantis%20png.png",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/61619/3105831"
   },
   {
     scientificName: "Eryngium viviparum",
+    family: "Apiaceae",
     commonName: "Panicaut Nain Vivipare",
     slug: "eryngium-viviparum",
     status: "CR",
@@ -1383,16 +1419,17 @@ const SPECIES = [
     discoveryNarrative: "One of Europe&rsquo;s smallest and most overlooked Critically Endangered plants &mdash; a spiky, jewel-like perennial no taller than your hand, growing in the seasonal puddles of Brittany and Galicia. Its name &lsquo;viviparum&rsquo; reveals a remarkable survival trick: it produces tiny daughter plantlets while still attached to the parent, giving each seedling a head start in its shrinking world.",
     pullQuote: "No taller than your hand, surviving in seasonal puddles &mdash; with fewer wild sites than you could visit in a single day.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "France / Spain",
     oyaCollection: "Collection 06",
     illustrationUrl: "Panicaut%20Nain%20Vivipare.jpg",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/13162/3427697"
   },
   // ── ENDANGERED ────────────────────────────────────────────────
   {
     scientificName: "Caesalpinia echinata",
+    family: "Fabaceae",
     commonName: "Pau Brasil (Brazilwood)",
     slug: "caesalpinia-echinata",
     status: "EN",
@@ -1407,17 +1444,18 @@ const SPECIES = [
     discoveryNarrative: "The tree that named an entire country. Brazil owes its name to pau brasil &mdash; &lsquo;ember wood&rsquo; &mdash; for the rich red heartwood that glowed like a burning coal. For four centuries it was the most valuable plant in South America. Now it is Endangered, protected by law, a living monument to over-exploitation.",
     pullQuote: "Brazil owes its very name to this tree &mdash; and spent 400 years pushing it to the edge of extinction.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Brazil",
     oyaCollection: "Collection 01",
     photoUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Caesalpinia-echinata.jpg",
     photoCredit: "Photo: Wikimedia Commons (CC BY-SA)",
     illustrationUrl: "Caesalpinia%20echinata.jpg",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/33974/9818224"
   },
   {
     scientificName: "Anisotes spectabilis",
+    family: "Acanthaceae",
     commonName: "Eastern Arc Forest Shrub",
     slug: "anisotes-spectabilis",
     status: "EN",
@@ -1432,15 +1470,16 @@ const SPECIES = [
     discoveryNarrative: "In the Eastern Arc Mountains of Tanzania &mdash; forests older than the Himalayas, filled with species found nowhere else on Earth &mdash; a tall forest shrub with striking flowers clings to the last remaining patches of highland forest. The Eastern Arc is one of Africa&rsquo;s greatest biological treasures, and it is disappearing at speed.",
     pullQuote: "These forests are older than the Himalayas &mdash; and most of the forest below 2,000 m is already gone.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Tanzania",
     oyaCollection: "Collection 08",
     illustrationUrl: "Anisotes%20spectabilis.jpg",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/48154021/48154161"
   },
   {
     scientificName: "Aquilegia barbaricina",
+    family: "Ranunculaceae",
     commonName: "Sardinian Columbine",
     slug: "aquilegia-barbaricina",
     status: "CR",
@@ -1452,18 +1491,19 @@ const SPECIES = [
     lastAssessed: "2006",
     threats: ["Collector pressure — beauty of flowers attracts illegal collection", "Extremely small population (under 50 individuals)", "Contracting habitat area", "Accessible site making removal easy"],
     threatNarrative: "Fewer than 50 mature individuals of Aquilegia barbaricina survive, all confined to a tiny area in the Gennargentu mountains of central Sardinia between 1,300 and 1,400 metres altitude. Its population is declining and its habitat is shrinking. Cruelly, the very quality that makes this plant remarkable &mdash; the haunting delicacy of its flowers &mdash; also makes it a target for collectors, who can access its mountain sites and remove plants with little difficulty. There is little doubt it will become extinct in the near future without active protection.",
-    discoveryNarrative: "A mountain columbine of haunting delicacy, found only at high altitude in the ancient peaks of Sardinia. Its flowers are among the most beautiful of any European alpine plant &mdash; which is precisely why it is disappearing. OYA has made it visible so that its beauty might save it rather than destroy it.",
+    discoveryNarrative: "A mountain columbine of haunting delicacy, found only at high altitude in the ancient peaks of Sardinia. Its flowers are among the most beautiful of any European alpine plant &mdash; which is precisely why it is disappearing. Oya has made it visible so that its beauty might save it rather than destroy it.",
     pullQuote: "Fewer than 50 plants remain &mdash; and the beauty of its flowers has made it a target for collectors.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Italy",
     oyaCollection: "Collection 02",
     illustrationUrl: "Aquilegia%20barbaricina.png",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/61671/12519876"
   },
   {
     scientificName: "Calendula maritima",
+    family: "Asteraceae",
     commonName: "Sea Marigold",
     slug: "calendula-maritima",
     status: "CR",
@@ -1475,18 +1515,19 @@ const SPECIES = [
     lastAssessed: "2011",
     threats: ["Coastal habitat destruction and fragmentation", "Hybridisation diluting genetic identity", "Urban expansion along the Trapani coastline", "Very restricted range — a few square kilometres only"],
     threatNarrative: "Calendula maritima is endemic to a narrow strip of western Sicilian coastline, confined to the area between the Stagnone di Marsala lagoon and the city of Trapani. Fewer than 25 small, fragmented subpopulations remain &mdash; many already hybridised with other Calendula species, steadily diluting the plant&rsquo;s genetic identity. Urban development presses in from Trapani, the lagoon constrains it from the other side, and the coastal scrub it needs is being cleared and degraded season by season.",
-    discoveryNarrative: "A golden-flowered marigold that grows only on a few kilometres of Sicilian coastline, between an ancient lagoon and one of Italy&rsquo;s most historic port cities. Once the sun sets on this coast, almost nowhere else on Earth does this plant exist. OYA commissioned its portrait before it disappears entirely.",
+    discoveryNarrative: "A golden-flowered marigold that grows only on a few kilometres of Sicilian coastline, between an ancient lagoon and one of Italy&rsquo;s most historic port cities. Once the sun sets on this coast, almost nowhere else on Earth does this plant exist. Oya commissioned its portrait before it disappears entirely.",
     pullQuote: "Fewer than 25 subpopulations remain &mdash; many already hybridised, slowly losing their identity.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Italy",
     oyaCollection: "Collection 02",
     illustrationUrl: "Calendula%20maritima.png",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/61618/12524417"
   },
   {
     scientificName: "Labordia cyrtandrae",
+    family: "Loganiaceae",
     commonName: "Kāmakahala",
     slug: "labordia-cyrtandrae",
     status: "CR",
@@ -1498,19 +1539,20 @@ const SPECIES = [
     lastAssessed: "2011",
     threats: ["Feral pigs destroying forest understory", "Invasive plants — Christmas berry, Koster&rsquo;s curse, strawberry guava", "Fire and human disturbance", "All previous recovery efforts unsuccessful"],
     threatNarrative: "With only 11 known individuals remaining, Labordia cyrtandrae is among the rarest plants on Earth. It grows in the moist forests of O&lsquo;ahu &mdash; the Wai&lsquo;&amacr;nae and Ko&lsquo;olau mountain ranges &mdash; where feral pigs tear up the understory, invasive plants smother native species, and fire threatens what little habitat remains. Every previous attempt to stabilise or recover the population has been unsuccessful. Each surviving plant is known, located, and monitored. And there are eleven of them.",
-    discoveryNarrative: "Only 11 known individuals. That is the entire wild population of Labordia cyrtandrae &mdash; a small Hawaiian shrub with greenish-yellow flowers growing in the moist mountain forests of O&lsquo;ahu. Every single plant is known, located, and counted. OYA drew its portrait while there was still something left to draw.",
+    discoveryNarrative: "Only 11 known individuals. That is the entire wild population of Labordia cyrtandrae &mdash; a small Hawaiian shrub with greenish-yellow flowers growing in the moist mountain forests of O&lsquo;ahu. Every single plant is known, located, and counted. Oya drew its portrait while there was still something left to draw.",
     pullQuote: "Only 11 known individuals remain in the wild &mdash; every plant is known and counted.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Hawaii, USA",
     oyaCollection: "Collection 03",
     illustrationUrl: "Labordia%20cyrtandrae%20B.png",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/44068/10854645"
   },
   // ── VULNERABLE ────────────────────────────────────────────────
   {
     scientificName: "Petrocoptis grandiflora",
+    family: "Caryophyllaceae",
     commonName: "Large-flowered Rock Cress",
     slug: "petrocoptis-grandiflora",
     status: "VU",
@@ -1525,17 +1567,18 @@ const SPECIES = [
     discoveryNarrative: "A pioneer plant that grows where almost nothing else can &mdash; in the hairline cracks of vertical limestone walls high in the mountains of northwest Spain. Its large, bright white flowers are disproportionately beautiful for such a tenacious cliff-dweller.",
     pullQuote: "It grows in the hairline cracks of vertical cliff faces &mdash; where a rock climber&rsquo;s hand can erase an entire colony.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Spain",
     oyaCollection: "Collection 02",
     photoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/59/Petrocoptis_grandiflora.003_-_Serra_de_Enci%C3%B1a_de_Lastra.JPG",
     photoCredit: "Photo: Wikimedia Commons (CC BY-SA)",
     illustrationUrl: "Petrocoptis%20Grandiflora.png",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/161972/5522058"
   },
   {
     scientificName: "Romulea phoenicia",
+    family: "Iridaceae",
     commonName: "Phoenician Romulea",
     slug: "romulea-phoenicia",
     status: "VU",
@@ -1550,16 +1593,17 @@ const SPECIES = [
     discoveryNarrative: "A small, jewel-like crocus-relative that flowers on the slopes above the ancient Phoenician coast. Its name reaches back thousands of years to the civilisation that first sailed these shores. Today its habitat is one of the most densely developed coastlines in the Mediterranean.",
     pullQuote: "Named for the ancient Phoenicians &mdash; now threatened by the cities built upon their shores.",
     oyaIllustrated: true,
-    artistName: "OYA Artist",
+    artistName: "Oya Artist",
     artistCountry: "Lebanon / Israel",
     oyaCollection: "Collection 04",
     illustrationUrl: "Romulea%20phoenicia%204.jpg",
-    illustrationCredit: "Illustration: OYA &mdash; Conservation for the Next Generation",
+    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/13164092/18613005"
   },
   // ── LIVE IUCN API TEST SPECIES ─────────────────────────────────
   {
     scientificName: "Myosotis rehsteineri",
+    family: "Boraginaceae",
     commonName: "Rehsteiner's Forget-me-not",
     slug: "myosotis-rehsteineri",
     status: "EN",
@@ -1579,6 +1623,7 @@ const SPECIES = [
   },
   {
     scientificName: "Spathelia coccinea",
+    family: "Rutaceae",
     commonName: "Wild Crapemyrtle",
     slug: "spathelia-coccinea",
     status: "EN",
@@ -1612,8 +1657,9 @@ const state = {
 const CHAPTER_COLORS = ['#c8e896', '#e87870', '#b8a0e8', '#e8b890'];
 
 /* ============================================================
-   OYA colour code (legend + filter)
+   Oya colour code (legend + filter)
    ============================================================ */
+/* Status-chip palette — original Oya Portraits colour code */
 const COLOUR_CODES = [
   { key: 'red',   hex: '#e87870', label: 'Critically endangered' },
   { key: 'amber', hex: '#ef9f27', label: 'Endangered' },
@@ -1624,7 +1670,7 @@ const OYA_LOGO_SVG = `
   <svg class="oya-svg-logo" viewBox="0 0 220 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <ellipse cx="72" cy="18" rx="22" ry="11" fill="currentColor" opacity="0.7" transform="rotate(-30 72 18)"/>
     <ellipse cx="84" cy="12" rx="18" ry="9" fill="currentColor" opacity="1" transform="rotate(-15 84 12)"/>
-    <text x="8" y="68" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="58" font-weight="normal" fill="currentColor" letter-spacing="-1">Oya</text>
+    <text x="8" y="68" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-style="italic" font-size="58" font-weight="normal" fill="currentColor" letter-spacing="-1">Oya</text>
   </svg>
 `;
 
@@ -1780,8 +1826,8 @@ function renderFeatured() {
   featured.dataset.slug = s.slug;
 
   const artistLine = s.oyaIllustrated && s.artistCountry
-    ? `OYA commissioned illustration &middot; ${s.artistName ? s.artistName + ', ' : ''}${s.artistCountry}`
-    : 'OYA commissioned illustration';
+    ? `Oya commissioned illustration &middot; ${s.artistName ? s.artistName + ', ' : ''}${s.artistCountry}`
+    : 'Oya commissioned illustration';
   const firstSentence = (s.discoveryNarrative || '').split(/(?<=[.!?])\s+/)[0] || '';
 
   const featuredArtContent = s.photoUrl
@@ -1833,15 +1879,16 @@ function renderTeasers() {
     teaser.innerHTML = `
       <div class="teaser-thumb" style="background:${tintFor(s.status)};color:var(--marine);">
         ${thumbContent}
-        <span class="teaser-status status-${s.status}">${s.status}</span>
       </div>
       <div class="teaser-body">
-        <h3 class="teaser-sci">${s.scientificName}</h3>
-        <p class="teaser-region">${s.commonName} &middot; ${s.region}, ${s.country}</p>
+        <span class="teaser-status status-${s.status}">${s.statusLabel}</span>
+        <h3 class="teaser-title">${s.commonName}</h3>
+        <p class="teaser-sci">${s.scientificName}</p>
+        <p class="teaser-family">Family: ${s.family} &middot; ${s.region}, ${s.country}</p>
         <p class="teaser-snippet">${snippet}</p>
-        <div class="teaser-row">
-          <span class="teaser-enter">Open this Portrait &rarr;</span>
-          ${s.oyaIllustrated ? `<span class="teaser-oya-tag">OYA illustrated</span>` : ''}
+        <div class="teaser-footer">
+          <span class="teaser-enter">Read story &darr;</span>
+          ${s.oyaIllustrated ? `<span class="teaser-oya-tag">Oya illustrated</span>` : ''}
         </div>
       </div>
     `;
@@ -1977,29 +2024,29 @@ function renderArtSection(s) {
   const art = document.getElementById('artSection');
   if (s.oyaIllustrated) {
     const illHtml = s.illustrationUrl
-      ? `<img src="${s.illustrationUrl}" alt="OYA illustration of ${s.scientificName}" style="max-width:100%;max-height:520px;object-fit:contain;display:block;margin:0 auto 20px;border-radius:4px;" />`
+      ? `<img src="${s.illustrationUrl}" alt="Oya illustration of ${s.scientificName}" style="max-width:100%;max-height:520px;object-fit:contain;display:block;margin:0 auto 20px;border-radius:4px;" />`
       : `<div class="art-placeholder">${botanicalSilhouette()}</div>`;
     art.innerHTML = `
       <div class="art-frame">
         ${illHtml}
-        <div class="art-copyright">&copy; OYA: Conservation for the Next Generation &mdash; All rights reserved</div>
-        <div class="artist-credit">Illustrated for OYA</div>
-        <div class="artist-country">${s.artistName ? s.artistName + ' · ' : ''}${s.artistCountry || ''} &nbsp;&middot;&nbsp; <span style="font-size:11px;opacity:0.7;">&copy; OYA All Rights Reserved</span></div>
+        <div class="artist-credit">Illustrated for Oya</div>
+        <div class="artist-country">${s.artistName ? s.artistName + ' · ' : ''}${s.artistCountry || ''}</div>
         <p class="artist-quote">&ldquo;To draw a plant that almost no one has seen is to ask the world to look again.&rdquo;</p>
-        <div class="collection-tag">Part of the OYA ${s.oyaCollection} collection</div>
+        <div class="collection-tag">Part of the Oya ${s.oyaCollection} collection</div>
+        <div class="art-copyright">&copy; Oya: Conservation for the Next Generation &mdash; All rights reserved</div>
       </div>
-      <p class="narrative">This illustration is part of OYA&rsquo;s ongoing project to commission original botanical artwork for every threatened species in our care &mdash; turning data points into faces, and faces into stories that travel.</p>
+      <p class="narrative">We invite artists from all disciplines to contribute and become Oya artists &mdash; turning data points into faces, and faces into stories that travel.</p>
     `;
   } else {
     art.innerHTML = `
       <div class="needs-artist">
         <h3>No artist has documented this species yet.</h3>
-        <p>Could this be OYA&rsquo;s next Country Project?</p>
+        <p>Could this be Oya&rsquo;s next Country Project?</p>
         <p style="margin-top:20px;">
-          <a href="https://oyatees.org/contact" target="_blank" rel="noopener" style="display:inline-block;padding:10px 22px;background:var(--soft-purple);color:#fff;text-decoration:none;border-radius:3px;">Sponsor a commission &rarr;</a>
+          <a href="https://oyatees.org/contact" target="_blank" rel="noopener" style="display:inline-block;padding:10px 22px;background:var(--soft-purple);color:#fff;text-decoration:none;border-radius:3px;">Sponsor an artist &rarr;</a>
         </p>
       </div>
-      <p class="narrative">OYA actively seeks artists and sponsors for species like this one &mdash; plants whose stories deserve to be drawn, printed, and worn into the world.</p>
+      <p class="narrative">Oya actively seeks artists and sponsors for species like this one &mdash; plants whose stories deserve to be drawn, printed, and worn into the world.</p>
     `;
   }
 }
@@ -2255,7 +2302,7 @@ function downloadCalendulaPDF(s) {
   // Build absolute URL for the illustration so it resolves from the new window
   const illSrc = s.illustrationUrl ? window.location.origin + '/' + s.illustrationUrl : null;
   const illBlock = illSrc
-    ? `<div class="ill-wrap"><img src="${illSrc}" alt="OYA illustration of ${s.scientificName}" class="ill-img" /></div>`
+    ? `<div class="ill-wrap"><img src="${illSrc}" alt="Oya illustration of ${s.scientificName}" class="ill-img" /></div>`
     : '';
   // Open a new window with a print-optimised storybook page
   const w = window.open('', '_blank');
@@ -2263,7 +2310,7 @@ function downloadCalendulaPDF(s) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Sea Marigold — OYA Portrait</title>
+<title>The Sea Marigold — Oya Portrait</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -2439,7 +2486,7 @@ function downloadCalendulaPDF(s) {
     <line x1="10" y1="50" x2="30" y2="30" stroke="#2a7a20" stroke-width="1.5"/>
   <\/svg>
 
-  <div class="oya-brand">OYA &mdash; Conservation for the Next Generation<\/div>
+  <div class="oya-brand">Oya &mdash; Conservation for the Next Generation<\/div>
   <div class="series-label">A Plant Portrait<\/div>
   <div class="title">The Sea Marigold<\/div>
   <div class="subtitle"><em>Calendula maritima<\/em> &mdash; Western Sicily, Italy<\/div>
@@ -2447,7 +2494,7 @@ function downloadCalendulaPDF(s) {
   <div class="status-wrap"><span class="status-badge">CRITICALLY ENDANGERED<\/span><\/div>
   <blockquote class="pull-quote">&ldquo;Fewer than 25 subpopulations remain &mdash; many already hybridised, slowly losing their identity.&rdquo;<\/blockquote>
   ${illBlock}
-  <p class="story-text">A golden-flowered marigold that grows only on a few kilometres of Sicilian coastline, between an ancient lagoon and one of Italy&rsquo;s most historic port cities. Once the sun sets on this coast, almost nowhere else on Earth does this plant exist. OYA commissioned its portrait before it disappears entirely.<\/p>
+  <p class="story-text">A golden-flowered marigold that grows only on a few kilometres of Sicilian coastline, between an ancient lagoon and one of Italy&rsquo;s most historic port cities. Once the sun sets on this coast, almost nowhere else on Earth does this plant exist. Oya commissioned its portrait before it disappears entirely.<\/p>
   <p class="story-text">The Sea Marigold blooms in yellow beside the Stagnone di Marsala lagoon and the city of Trapani. It faces the sea, the salt air, and a coastline that is slowly changing. Many of its subpopulations have already begun to hybridise with other marigolds, quietly losing what makes them unique.<\/p>
   <div class="facts-row">
     <div class="fact-box"><div class="fact-label">Status<\/div><div class="fact-value">CR<\/div><\/div>
@@ -2455,7 +2502,7 @@ function downloadCalendulaPDF(s) {
     <div class="fact-box"><div class="fact-label">Population<\/div><div class="fact-value">&lt;25 sites<\/div><\/div>
     <div class="fact-box"><div class="fact-label">Threat<\/div><div class="fact-value">Hybridisation<\/div><\/div>
   <\/div>
-  <div class="footer-line">OYA Portraits &mdash; oya-portraits.netlify.app &nbsp;&middot;&nbsp; Data: IUCN Red List &nbsp;&middot;&nbsp; &copy; 2026 OYA: Conservation for the Next Generation &middot; All Rights Reserved<\/div>
+  <div class="footer-line">Oya Portraits &mdash; oya-portraits.netlify.app &nbsp;&middot;&nbsp; Data: IUCN Red List &nbsp;&middot;&nbsp; &copy; 2026 Oya: Conservation for the Next Generation &middot; All Rights Reserved<\/div>
   <script>
     window.onload = function() {
       const img = document.querySelector('.ill-img');
@@ -2482,7 +2529,7 @@ async function enrichWithIUCNData(s) {
     if (!data) return;
 
     // Log raw response for debugging — check browser console if data isn't showing
-    console.log('[OYA IUCN] Raw response for', s.scientificName, JSON.stringify(data).slice(0, 800));
+    console.log('[Oya IUCN] Raw response for', s.scientificName, JSON.stringify(data).slice(0, 800));
 
     // IUCN v4 API response shape may vary; try multiple structures
     let assessment = null;
@@ -2571,7 +2618,7 @@ async function enrichWithIUCNData(s) {
     }
 
   } catch(e) {
-    console.warn('[OYA IUCN] Live data fetch failed for', s.scientificName, e);
+    console.warn('[Oya IUCN] Live data fetch failed for', s.scientificName, e);
     // Clear loading placeholders gracefully
     const factPopEl = document.getElementById('factPopulation');
     if (factPopEl && factPopEl.textContent.includes('Loading')) factPopEl.textContent = '—';
