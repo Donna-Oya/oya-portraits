@@ -4,7 +4,7 @@
    Bump CACHE_VERSION when you ship updated content.
    ============================================================ */
 
-const CACHE_VERSION = 'oya-plantwatch-v1';
+const CACHE_VERSION = 'oya-portraits-v2-rebrand-2026-05';
 const CORE_ASSETS = [
   './',
   './index.html',
