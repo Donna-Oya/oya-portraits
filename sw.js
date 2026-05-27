@@ -4,7 +4,7 @@
    Bump CACHE_VERSION when you ship updated content.
    ============================================================ */
 
-const CACHE_VERSION = 'oya-portraits-v10-calendula-photo-fix-2026-05';
+const CACHE_VERSION = 'oya-portraits-v11-phase2-batch5-2026-05';
 const CORE_ASSETS = [
   './',
   './index.html',
