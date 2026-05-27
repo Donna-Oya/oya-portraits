@@ -1727,32 +1727,13 @@ const SPECIES = [
     illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
     iucnUrl: "https://www.iucnredlist.org/species/61645/3106291"
   },
-  {
-    scientificName: "Saponaria syriaca",
-    family: "Caryophyllaceae",
-    commonName: "Syrian Soapwort",
-    slug: "saponaria-syriaca",
-    status: "CR",
-    statusLabel: "Critically Endangered",
-    region: "Lebanese and Syrian limestone mountains",
-    country: "Lebanon and Syria",
-    wildPopulation: "Unknown",
-    populationTrend: "Decreasing",
-    lastAssessed: "Not captured",
-    threats: ["Habitat fragmentation from agriculture and grazing", "Armed conflict in its range affecting habitat and field research", "Climate change altering mountain rainfall patterns", "Very limited population and documentation"],
-    threatNarrative: "Saponaria syriaca is Critically Endangered. Its range straddles a region of immense biodiversity but also of immense pressure &mdash; the Lebanese and Syrian mountains, where habitat is fragmented by agriculture, grazing, road construction, and the lasting effects of armed conflict. Climate change is shifting the rainfall patterns that mountain soapworts depend on. Documentation of the species itself remains thin: the IUCN listing is among the few formal records, and most photographs reside in herbaria and a small number of published papers.",
-    discoveryNarrative: "In the high limestone of Lebanon and Syria &mdash; places shaped by mountain rain and human history alike &mdash; Saponaria syriaca survives in small, scattered populations. Its small pink flowers and slender stems are easy to walk past unnoticed, but the plant itself is one of the rarest soapworts in the world. So rare, in fact, that almost no public photographs of it exist outside academic studies. To see it, you have to find it; to find it, you have to know where to look.",
-    pullQuote: "A soapwort of the Lebanese mountains &mdash; so rare that even the photographs of it are hard to find.",
-    oyaIllustrated: true,
-    artistName: "Oya Artist",
-    artistCountry: "Lebanon",
-    oyaCollection: "Collection 01",
-    photoUrl: "Saponaria-syriaca-mosaferi-2017.jpg",
-    photoCredit: "Saponaria-syriaca_fig1 (Mosaferi et al., 2017, ResearchGate), all rights reserved, used with attribution",
-    illustrationUrl: "Saponaria%20syriaca-coloured%20jpeg.jpg",
-    illustrationCredit: "Illustration: Oya &mdash; Conservation for the Next Generation",
-    iucnUrl: "https://www.iucnredlist.org/search?query=Saponaria%20syriaca"
-  },
+  // Saponaria syriaca removed 27 May 2026 — IUCN has no record under this name
+  // (taxa/scientific_name lookup returned 404; not listed under Bolanthus syriacus
+  // or Ankyropetalum gypsophiloides either). GBIF confirms S. syriaca is an
+  // accepted name, just never formally assessed by IUCN. Photo + illustration
+  // files (Saponaria-syriaca-mosaferi-2017.jpg and Saponaria syriaca-coloured
+  // jpeg.jpg) intentionally kept in the deploy folder so the species can be
+  // revived quickly if IUCN does a future assessment.
   {
     scientificName: "Wahlenbergia linifolia",
     family: "Campanulaceae",
